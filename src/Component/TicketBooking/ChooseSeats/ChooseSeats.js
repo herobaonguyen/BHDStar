@@ -117,20 +117,7 @@ export const ChooseSeats = () => {
             className="next-step-btn">
             CHỌN ĐỒ ĂN
           </button>
-          <button
-            onClick={() => {
-              if (bookingFilmInfo.numberOfTickets > 0) {
-                dispatch({ type: HomeType.OPEN_LOADING })
-                setTimeout(() => {
-                  navigate(-1, { state: state })
-                  dispatch({ type: HomeType.CLOSE_LOADING })
-                }, DelayTime.BOOKING_TICKET_DELAY)
-              }
-            }}
-            style={{ marginLeft: '30px' }}
-            className="next-step-btn return">
-            QUAY VỀ
-          </button>
+
         </div>
       </div>
     </div>

@@ -167,9 +167,7 @@ export const ConfirmTicket = () => {
             <div className="col-6">
 
             </div>
-            <div className="col-2">
-
-            </div>
+           
             <div className="col-2">
               Tổng Cộng
             </div>

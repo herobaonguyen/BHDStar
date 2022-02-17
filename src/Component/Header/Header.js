@@ -5,11 +5,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { HomeType } from '../../Redux/Type/HomeType/HomeType';
 import { toast } from 'react-toastify';
 import { poppupNoti } from '../../Util/Notification';
+import { useNavigate } from 'react-router-dom';
 
 export const Header = () => {
 
 
     const [state, toggle] = useState(false)
+    const navigate = useNavigate()
     const [openLogin, setOpenLogin] = useState(false)
     const dispatch = useDispatch()
     const { userLogin } = useSelector(state => state.UserReducer)

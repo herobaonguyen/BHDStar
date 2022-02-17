@@ -118,4 +118,19 @@
             }
         }
     }
+
+    @media screen and (max-width:421px) {
+        .food-choosing-container {
+           
+
+            .food-choosing__space {
+             
+                .food-list {
+                    .food {
+                        width: 100px !important;
+                    }
+                }
+            }
+        }
+    }
 }

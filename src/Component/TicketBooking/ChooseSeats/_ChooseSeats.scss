@@ -29,6 +29,7 @@
         .seat-info{
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
 
             .seat-info-detail{
                 display: flex;
