@@ -108,12 +108,13 @@ export const BookingTicketReducer = (state = stateDefaults, action) => {
 
                 } else if (state.chooseCounter === state.bookingFilmInfo.numberOfTickets) {
                     if (state.seatList[index].choosing === true) {
-                        state.seatList[index].choosing = !state.seatList[index].choosing;
+                        state.seatList[index].choosing = false
                         state.chooseCounter--
                         state.bookingFilmInfo.tongGiaTien -= action.seat.giaVe
                         state.tongDonHang -= action.seat.giaVe
-                        const index = state.chosenSeatList.findIndex(seat => seat.tenGhe === action.seat.tenGhe)
-                        state.chosenSeatList.splice(index,1)
+                        const index2 = state.chosenSeatList.findIndex(seat => seat.tenGhe === action.seat.tenGhe)
+                        state.chosenSeatList.splice(index2,1)
+                        
                     }
                 }
             }
