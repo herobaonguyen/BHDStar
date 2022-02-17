@@ -1,0 +1,106 @@
+.main-ticket-booking {
+    margin-top: 75px;
+    background-color: $color-black-300;
+    padding-top: 75px;
+    padding-bottom: 140px;
+
+    .my-container {
+        width: 80%;
+        margin: 0 auto;
+
+        
+
+        .step-bar {
+            display: flex;
+
+            @for $i from 1 through 5 {
+                .step:nth-child(#{$i}) {
+                    z-index: 5 - $i;
+                }
+            }
+            .step {
+                background-color: $color-green-400;
+                opacity: 0.8;
+                font-weight: bold;
+                width: 23%;
+                padding-block: 10px;
+                margin-right: 6px;
+                position: relative;
+                text-align: center;
+                font-size: 15px;
+
+                &::after {
+                    position: absolute;
+                    display: block;
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border: 21.6px solid;
+                    border-color: transparent transparent transparent $color-green-400;
+                    right: -53px;
+                    top: 0;
+                    border-left-width: 32px;
+                }
+
+                &::before {
+                    position: absolute;
+                    display: block;
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border: 21.6px solid;
+                    border-color: transparent transparent transparent black;
+                    left: 0;
+                    top: 0;
+                    border-left-width: 32px;
+                }
+
+                &.progressing {
+                    background-color: $color-green-100;
+                    opacity: 1;
+
+                    &::after {
+                        border-left-color: $color-green-100;
+                    }
+                }
+
+                &.first {
+                    &::before {
+                        border-left: transparent;
+                    }
+                }
+
+                &.active {
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        @media screen and (max-width:1300px){
+            width: 90%;
+        }
+
+        @include responsive(extra-large) {
+            width: 93%;
+        }
+        
+        @include responsive(large) {
+
+            margin-top: 20px;
+    
+            .step-bar{
+                display: none;
+            }
+    
+            
+        }
+    }
+
+    @include responsive(large) {
+
+        margin-top: 20px;
+
+        
+    }
+}

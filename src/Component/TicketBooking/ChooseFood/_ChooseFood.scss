@@ -1,0 +1,121 @@
+.choose-food {
+    margin-top: 25px;
+    position: relative;
+    margin-bottom: 200px;
+
+    .food-choosing-container {
+        width: 60%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .food-choosing-header__container {
+            h2 {
+                font-size: 28px;
+                color: $color-green-500;
+            }
+
+            p {
+                margin-block: 20px;
+            }
+        }
+
+        .food-choosing__space {
+            display: flex;
+
+            position: relative;
+            justify-content: flex-end;
+
+            .food-choosing__space-tag {
+                background-color: $color-green-500;
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: 10px 97px 10px 10px;
+                display: flex;
+                align-items: center;
+            }
+
+            .food-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-self: flex-end;
+                border: 1px solid $color-green-500;
+
+                .food {
+                    border: 0.5px solid $color-green-500;
+                    background-color: $color-white-100;
+                    margin: 5px;
+                    width: 170px;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    p {
+                        color: $color-black-300;
+                        font-weight: bold;
+                        margin-block: 5px;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                    }
+
+                    .pick-number-of-food {
+                        display: flex;
+                        justify-content: center;
+
+                        .count-food {
+                            margin-inline: 10px;
+                            color: $color-black-300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(large) {
+        .food-choosing__space {
+            justify-content: flex-start !important;
+            .food-list {
+                .food {
+                    width: 130px !important;
+                }
+            }
+        }
+    }
+    @include responsive(medium) {
+        margin-bottom: 300px;
+
+        .food-choosing-container {
+            top: 100%;
+            width: 100%;
+
+            .food-choosing__space {
+                width: 100%;
+                .food-list {
+                    .food {
+                        width: 170px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(small) {
+        .food-choosing-container {
+           
+
+            .food-choosing__space {
+             
+                .food-list {
+                    .food {
+                        width: 120px !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+.view-film-slider{
+    padding:70px 50px 80px 50px;
+    position: relative;
+    z-index: 999;
+
+    .view-film-slider__header{
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin-bottom:50px;
+        font-size: 20px;
+        color: $color-green-200 !important; 
+        
+        &::after{
+            content:'';
+            width: 170px;
+            height: 1px;
+            display: block;
+            background-color:$color-green-200;
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+
+    &::before{
+        content:'';
+        background-image: url(../../Assets/img/movie-details-bg.jpg);
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 20px;
+        left:0px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: 0;
+
+    }
+
+    &::after{
+       
+        content:'';
+        background-image: url(../../Assets/img/scroll-down.png);
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -140px;
+        background-repeat: no-repeat;
+        left: 0px;
+        background-position: top;
+    }
+    .film-image{
+        transition: all .3s ease;
+        cursor: pointer;
+    }
+    .film-image:hover{
+        transform: scale(1.1);
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.swiper-button-prev{
+    position: absolute;
+    left:0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+  

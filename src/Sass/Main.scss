@@ -1,0 +1,33 @@
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
+@import "./BaseSetting/Base/Reset";
+
+@import "./BaseSetting/Helper/Variable";
+@import "./BaseSetting/Helper/Mixin";
+
+@import "./BaseSetting/Component/Button";
+
+@import "./../Template/TicketBookingTemplate/TicketBookingTemplate";
+
+@import "./../Component/Loading/Loading";
+@import "./../Component/Header/Header";
+@import "./../Component/ViewFilm/ViewFilm";
+@import "./../Component/SpecialBanner/SpecialBanner";
+@import "./../Component/Footer/Footer";
+@import "./../Component/LoginForm/LoginForm";
+@import "./../Component/Demo";
+
+@import "./../Page/FilmDetail/FilmDetail";
+@import "./../Component/FilmDetailComponent/FilmInfo/FilmInfo";
+@import "./../Component/FilmDetailComponent/TicketSet/TicketSet";
+@import "./../Component/FilmDetailComponent/FilmShowtimes/FilmShowtimes";
+
+@import "./../Component/TicketBooking/NumberOfSeats/NumberOfSeats";
+@import "./../Component/TicketBooking/BookingInfo/BookingInfo";
+@import "./../Component/TicketBooking/ChooseSeats/ChooseSeats";
+@import "./../Component/TicketBooking/ChooseFood/ChooseFood";
+@import "./../Component/TicketBooking/ConfirmTicket/ConfirmTicket";
+@import "./../Component/TicketBooking/FinalStep/FinalStep";
+
+
+
+

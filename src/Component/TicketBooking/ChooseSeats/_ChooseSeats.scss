@@ -1,0 +1,187 @@
+.choose-seats{
+    margin-top: 25px;
+
+    .booking-notify{
+        h2{
+            font-size:30px;
+            font-weight: bold;
+            color: $color-green-100;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 18px;
+            span{
+                color: $color-green-100;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            
+            &:last-child{
+                color:$color-red;
+            }
+        }
+    }
+
+    .seat-display{
+        width: 65%;
+        margin-top: 30px;
+
+        .seat-info{
+            display: flex;
+            justify-content: center;
+
+            .seat-info-detail{
+                display: flex;
+                margin-right: 12px;
+                align-items: center;
+            }
+        }
+
+        .seat-choose-space{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            position: relative;
+            background-color:$color-dark-blue;
+            padding: 50px 130px 20px 130px;
+            align-items: center;
+            justify-content: center;
+            
+            .display{
+                width: 45%;
+                height: 30px;
+                background-color: $color-black-1100;
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: center;
+                align-items: center
+            }
+        }
+
+        .seat{
+            width:30px;
+            height:30px;
+            display:flex;
+            background-color: white;
+            margin: 8px 8px 8px 8px;
+            color: $color-black-100;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            
+
+            &.seat-already-sold{
+                background-color: $color-black-700;
+                cursor: not-allowed;
+            }
+
+            &.seat-vip{
+                border: 5px solid $color-orange;
+                
+            }
+
+            &.seat-choosing{
+                background-color:$color-green-500;
+                color: $color-white-100;
+            }
+        }
+
+    }
+    .return{
+        display: none;
+    }
+
+    @include responsive(extra-large) {
+        .seat-display{
+            width: 75%;
+
+            .seat-choose-space{
+                padding-inline: 100px;
+
+                .seat{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:1090px){
+        .seat-display{
+            .seat-choose-space{
+                padding-inline: 70px;
+            }
+        }
+    }
+
+    @media screen and (max-width:1004px){
+        .seat-display{
+            .seat-choose-space{
+                padding-inline: 65px;
+            }
+        }
+    }
+
+    @include responsive(large) {
+        .seat-display{
+            width: 80%;
+
+            .seat-choose-space{
+                padding-inline: 50px;
+
+                .seat{
+                    width: 42px;
+                    height: 42px;
+                }
+            }
+        }
+        .return{
+            display: block;
+        }
+    }
+
+    @media screen and (max-width:914px){
+        .seat-display{
+
+            .seat-choose-space{
+                padding-inline: 30px;
+
+            }
+        }
+    }
+
+    @include responsive(medium){
+        .seat-display{
+            width: 100%;
+
+            .seat-choose-space{
+                padding-inline: 40px;
+
+                .seat{
+                    width: 42px;
+                    height: 42px;
+                }
+            }
+        }
+
+      
+    }
+
+    @include responsive(small) {
+        .seat-display{
+            width: 100%;
+
+            .seat-choose-space{
+                padding-inline: 0px;
+
+                .seat{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

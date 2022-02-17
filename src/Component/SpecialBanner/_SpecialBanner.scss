@@ -1,0 +1,40 @@
+.special-banner{
+    padding: 100px 150px;
+    background-image: url(../../Assets/img/bg-home-02.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .special-banner__header{
+        text-align: center;
+        color: $color-green-100;
+        margin-bottom:30px;
+        font-size: 25px;
+        font-weight: bold;
+        position: relative;
+        
+        &::after{
+            content:'';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15%;
+            height: 3px;
+            background-color: $color-green-100;
+        }
+    }
+    @include responsive(medium){
+        .special-slide{
+            height: 190px !important;
+        }
+        padding: 100px 100px;
+    }
+    @include responsive(small) {
+        padding: 100px 80px;
+        .special-slide{
+            
+        }
+    }
+}

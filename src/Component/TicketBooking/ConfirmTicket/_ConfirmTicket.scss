@@ -1,0 +1,172 @@
+.confirm-ticket{
+    margin-top: 25px;
+    .confirm-cart{
+        background-color: $color-black-900;
+        padding: 12px 0 10px 10px;
+
+        h1{
+            font-size: 23px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid $color-white-100;
+        }
+
+        .confirm-film-info{
+            padding: 30px;
+            .info--row{
+                width: 35%;
+                
+                .info--col{       
+                    display: flex;
+
+                    &--full{
+                        width:150%;
+
+                        p{
+                            font-size: 17px;
+                        }
+                    }
+
+                    p{
+                        width:50%;
+                        font-size: 17px;
+           
+                        
+                    }
+                }
+            }
+        }
+
+        .full-cart{
+            padding-inline: 30px;
+            width: 60%;
+            padding-bottom: 15px;
+
+            .my-row{
+                margin-block: 15px;
+            }
+
+            .food-row{
+                background-color: $color-black-1200;
+                padding: 15px 0px;
+            }
+        }
+
+
+
+        .text--red{
+            color: $color-red;
+            font-weight: bold;
+        }
+
+        .text-green{
+            color: $color-green-500;
+        }
+    }
+
+    .user-booking-info{
+
+        margin-top: 10px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $color-white-100;
+
+        h1{
+            font-size:25px;
+            color:$color-green-100;
+        }
+
+        .input-info-container{
+            width: 34%;
+            font-size: 16px;
+            margin-top: 15px;
+
+            .row{
+                margin-block: 3px;
+            }
+
+            input{
+                background-color:$color-black-900;
+                border-radius: 2px;
+                border: 1px solid $color-black-200;
+                width: 80%;
+            }
+        }
+    }
+
+    .final-btn-group{
+        text-align: center;
+        margin-top: 50px;
+
+        .final-btn{
+            padding: 10px 20px;
+            background-color:$color-red;
+            font-weight: bold;
+            margin-inline: 10px;
+            border-radius: 5px;
+        }
+    }
+
+    @include responsive(extra-large){
+        .user-booking-info{
+            .input-info-container{
+                width: 45%;
+            }
+        }
+    }
+
+    @include responsive(large){
+        .confirm-cart{
+            .confirm-film-info{
+                .info--row{
+                    width: 50%;
+                }
+            }
+            .full-cart{
+                width: 90%;
+            }
+        }
+
+        .user-booking-info{
+            .input-info-container{
+                width: 55%;
+            }
+        }
+    }
+
+    @include responsive(medium){
+        .confirm-cart{
+            .confirm-film-info{
+                .info--row{
+                    width: 71%;
+                    .info--col{ 
+                        &--full{
+                            p{
+                                font-size: 15px;
+                            }
+                        }
+
+                        p{
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+            .full-cart{
+                width: 100%;
+            }
+        }
+
+        .user-booking-info{
+            .input-info-container{
+                width: 75%;
+            }
+        }
+    }
+
+    @include responsive(small){
+        .user-booking-info{
+            .input-info-container{
+                width: 100%;
+            }
+        }
+    }
+}

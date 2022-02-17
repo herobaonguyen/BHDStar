@@ -1,0 +1,61 @@
+.film-info {
+    margin-bottom: 70px;
+    .film-detail__header {
+        font-size: 25px;
+        margin-top: 30px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        .return-main {
+            transition: all 0.3s ease;
+            color:$color-green-200;
+
+            &:hover {
+                color: $color-white-100;
+            }
+        }
+        span {
+            margin: 0 5px;
+        }
+    }
+    img{
+        width: 100%;
+    }
+
+    .info{
+        .info__header{
+            font-size: 25px;
+        }
+
+        .film__description{
+            opacity: .7;
+            margin-top: 18px;
+        }
+
+        ul {
+            li{
+                display: flex;
+                margin-top: 30px;
+                .info__label{
+                    width: 80px;
+                    display: block;
+                    margin-right: 30px;
+                }
+
+                .info--redColor{
+                    font-weight: bold;
+                    color: $color-red;
+                }
+            }
+        }
+
+        .info__button{
+            margin-top: 50px;
+
+            button{
+                font-size: 15px;
+            }
+        }
+    }
+
+}

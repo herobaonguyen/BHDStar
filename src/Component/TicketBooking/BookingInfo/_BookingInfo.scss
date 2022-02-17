@@ -1,0 +1,96 @@
+.booking-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .booking-info__film{
+        display: flex;
+
+        .film__image{
+            img{
+                width: 140px;
+                height: 200px;
+            }
+        }
+
+        .film__info{
+            margin-left: 20px;
+            
+            h3{
+                color: $color-green-500;
+                text-transform: uppercase;
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+
+            p{
+                font-size:15px;
+            }
+        }
+    }
+
+    .booking-info__order{
+        background-color: $color-black-900;
+
+        h1{
+            font-size: 23px;
+            padding: 8px 80px 12px 8px;
+            border-bottom: 1.5px solid $color-white-100;
+        }
+
+        .price-info{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 8px;
+            
+
+            h3{
+                color: $color-green-500;
+                text-transform: uppercase;
+                font-size: 16px;
+            }
+
+            p{
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+        .price-total{
+            border-top: 2px solid rgba(221, 221, 221, 0.12);
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            padding-bottom: 15px;
+            
+            p{
+                font-weight: bold;
+            }
+        }
+
+        .price-food{
+            padding-inline: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            background-color: $color-black-200;
+            align-items: center;
+           
+
+            h3{
+                font-size: 16px;
+                width: 230px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+            }
+        }
+    }
+
+    @include responsive(medium){
+        flex-direction: column-reverse;
+        .booking-info__order{
+            margin-bottom: 20px;
+        }
+    }
+}
