@@ -149,4 +149,18 @@
             top: 110%;
         }
     }
+
+    @media only screen and (max-width: 475px){
+       .c{
+           display:none;
+       }
+
+       .header__right{
+           align-items: center;
+           padding-right: 5px;
+           p{
+               font-size:18px !important;
+           }
+       }
+    }
 }
