@@ -64,7 +64,7 @@ export const MainTicketBooking = () => {
         <span
           onClick={() => {
             if (bookingFilmInfo.numberOfTickets > 0) {
-              if (pathname !== `/ticketbooking/chooseseats`) {
+              if (pathname === `/ticketbooking/numberofseats`) {
                 dispatch({ type: HomeType.OPEN_LOADING })
                 setTimeout(() => {
                   navigate(`../ticketbooking/chooseseats`, { state: state })

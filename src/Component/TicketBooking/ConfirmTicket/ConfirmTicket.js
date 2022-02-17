@@ -63,7 +63,7 @@ export const ConfirmTicket = () => {
     return nodeList;
   }
 
-  console.log(foodChosenList)
+
 
   const renderFoodBill = () => (
     foodChosenList.map((food) => {

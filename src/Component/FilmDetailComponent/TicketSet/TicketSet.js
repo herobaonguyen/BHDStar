@@ -17,7 +17,6 @@ export const TicketSet = () => {
 
     const cumRapChieu = rap ? rap.cumRapChieu : []
 
-    console.log(cumRapChieu)
 
 
     const renderWeekDay = () => {

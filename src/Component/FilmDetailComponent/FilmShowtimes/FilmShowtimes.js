@@ -16,7 +16,7 @@ export const FilmShowtimes = (props) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {filmDetail,giaVe,maLichChieu} = useSelector(state => state.FilmDetailReducer)
-    console.log(filmDetail)
+
 
     const {tenCumRap,diaChi,lichChieuPhim} = props.rap
     
