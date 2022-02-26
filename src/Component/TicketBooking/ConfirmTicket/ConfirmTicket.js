@@ -1,12 +1,24 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { HomeType } from '../../../Redux/Type/HomeType/HomeType';
 import { DelayTime } from '../../../Util/Constant';
+import * as Yup from 'yup'
+import { withFormik } from 'formik';
 
 
+const ConfirmTicket = (props) => {
 
-export const ConfirmTicket = () => {
+  const {
+    values,
+    touched,
+    errors,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = props;
+
+
   const { state, pathname } = useLocation();
   const { chosenSeatList, tongDonHang, foodChosenList } = useSelector(state => state.BookingTicketReducer)
   const navigate = useNavigate()
@@ -167,7 +179,7 @@ export const ConfirmTicket = () => {
             <div className="col-6">
 
             </div>
-           
+
             <div className="col-2">
               Tổng Cộng
             </div>
@@ -177,7 +189,7 @@ export const ConfirmTicket = () => {
           </div>
         </div>
       </div>
-      <div className="user-booking-info">
+      <form className="user-booking-info">
         <h1>CHI TIẾT CÁ NHÂN</h1>
         <div className="input-info-container">
           <div className="row">
@@ -185,7 +197,8 @@ export const ConfirmTicket = () => {
               <p>Tên*</p>
             </div>
             <div className="col-9">
-              <input />
+              <input name='name' onChange={handleChange} />
+              <p style={{ fontSize: '14px', color: 'red' }}>{errors.name}</p>
             </div>
           </div>
           <div className="row">
@@ -193,7 +206,8 @@ export const ConfirmTicket = () => {
               <p>Email*</p>
             </div>
             <div className="col-9">
-              <input />
+              <input name='email' onChange={handleChange} />
+              <p style={{ fontSize: '14px', color: 'red' }}>{errors.email}</p>
             </div>
           </div>
           <div className="row">
@@ -201,31 +215,64 @@ export const ConfirmTicket = () => {
               <p>Điện thoại*</p>
             </div>
             <div className="col-9">
-              <input />
+              <input name='phoneNumber' onChange={handleChange} />
+              <p style={{ fontSize: '14px', color: 'red' }}>{errors.phoneNumber}</p>
             </div>
           </div>
         </div>
-      </div>
+      </form>
       <div className="final-btn-group">
-        <button 
-        onClick={() => {
-          dispatch({ type: HomeType.OPEN_LOADING })
-                setTimeout(() => {
-                  navigate("../")
-                  dispatch({ type: HomeType.CLOSE_LOADING })
-          }, DelayTime.BOOKING_TICKET_DELAY)
-        }}
-        className="final-btn">HỦY ĐẶT VÉ</button>
         <button
-        onClick={() => {
-          dispatch({ type: HomeType.OPEN_LOADING })
-                setTimeout(() => {
-                  navigate("../ticketbooking/finalstep")
-                  dispatch({ type: HomeType.CLOSE_LOADING })
-          }, DelayTime.BOOKING_TICKET_DELAY)
-        }}
-        className="final-btn">THANH TOÁN</button>
+          onClick={() => {
+            dispatch({ type: HomeType.OPEN_LOADING })
+            setTimeout(() => {
+              navigate("../")
+              dispatch({ type: HomeType.CLOSE_LOADING })
+            }, DelayTime.BOOKING_TICKET_DELAY)
+          }}
+          className="final-btn">HỦY ĐẶT VÉ</button>
+        <button 
+          type="submit"
+          onClick={() => {
+            if (JSON.stringify(errors) === '{}' && values.name !== '' && values.email !== '' && values.phoneNumber !== '') {
+              handleSubmit()
+     
+              dispatch({ type: HomeType.OPEN_LOADING })
+              setTimeout(() => {
+                navigate("../ticketbooking/finalstep")
+                dispatch({ type: HomeType.CLOSE_LOADING })
+              }, DelayTime.BOOKING_TICKET_DELAY)
+            }
+          }}
+          className="final-btn">THANH TOÁN</button>
       </div>
     </div>
   )
 }
+
+
+const ComfirmTicketForm = withFormik({
+  mapPropsToValues: () => ({
+    name: '',
+    email: '',
+    phoneNumber: ''
+  }),
+
+  // Custom sync validation
+  validationSchema: Yup.object().shape({
+    name: Yup.string().required('Bạn cần nhập tài khoản vào đây !'),
+    email: Yup.string().email('Email không hợp lệ !!').required('Bạn cần nhập mật khẩu vào !'),
+    phoneNumber: Yup.string().required('Bạn cần nhập mật khẩu vào !')
+  }),
+
+  handleSubmit: (values, { props, setSubmitting }) => {
+  },
+
+  displayName: 'BasicForm',
+})(ConfirmTicket);
+
+const mapStateToProps = (state) => ({
+
+})
+
+export default connect(mapStateToProps)(ComfirmTicketForm)

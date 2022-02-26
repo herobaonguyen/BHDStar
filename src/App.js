@@ -17,7 +17,7 @@ import { MainTicketBooking } from './Template/TicketBookingTemplate/MainTicketBo
 import { NumberOfSeats } from './Component/TicketBooking/NumberOfSeats/NumberOfSeats';
 import { ChooseSeats } from './Component/TicketBooking/ChooseSeats/ChooseSeats';
 import { ChooseFood } from './Component/TicketBooking/ChooseFood/ChooseFood';
-import { ConfirmTicket } from './Component/TicketBooking/ConfirmTicket/ConfirmTicket';
+import ConfirmTicket from './Component/TicketBooking/ConfirmTicket/ConfirmTicket';
 import { FinalStep } from './Component/TicketBooking/FinalStep/FinalStep';
 
 // init Swiper:
