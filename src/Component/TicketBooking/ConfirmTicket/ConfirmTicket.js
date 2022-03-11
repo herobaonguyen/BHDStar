@@ -260,9 +260,9 @@ const ComfirmTicketForm = withFormik({
 
   // Custom sync validation
   validationSchema: Yup.object().shape({
-    name: Yup.string().required('Bạn cần nhập tài khoản vào đây !'),
-    email: Yup.string().email('Email không hợp lệ !!').required('Bạn cần nhập mật khẩu vào !'),
-    phoneNumber: Yup.string().required('Bạn cần nhập mật khẩu vào !')
+    name: Yup.string().required('Bạn cần nhập tên vào đây !'),
+    email: Yup.string().email('Email không hợp lệ !!').required('Bạn cần nhập vào trường này !'),
+    phoneNumber: Yup.string().required('Bạn cần nhập vào trường này !')
   }),
 
   handleSubmit: (values, { props, setSubmitting }) => {
